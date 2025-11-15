@@ -1,0 +1,348 @@
+/* Ferret's School Projects: */
+/* Animal Adaptions */
+@font-face {
+    font-family: 'Font';
+    src: url('font.ttf');
+}
+
+body {
+    background-color: #0d3b2e;
+    color: #e8f5e9;
+    font-family: 'Font';
+}
+
+.subtitle_text {
+    text-align: center;
+    font-size: 120%;
+    font-family: 'Font';
+    display: block;
+    margin: 10px auto 5px auto;
+    color: #a5d6a7;
+    font-style: italic;
+}
+
+.header_text {
+    text-align: center;
+    font-size: 500%;
+    font-family: 'Momo Trust Display', sans-serif;
+    display: block;
+    margin: 0 auto;
+}
+
+
+hr {
+    border-color: #66bb6a;
+    border-width: 5px;
+    border-style: solid;
+    height: 0;
+}
+
+body > *:not(hr, .header_text) {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    text-align: center;
+    display: block;
+    margin: 20px 0;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #e8f5e9;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.nav-link:hover {
+    background-color: #1b5e3f;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.8em;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1b5e3f;
+    border: 2px solid #66bb6a;
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-link {
+    color: #e8f5e9;
+    text-decoration: none;
+    padding: 8px 20px;
+    display: block;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-link:hover {
+    background-color: #2e7d52;
+}
+
+/* Section Styling */
+section {
+    margin: 40px 10%;
+    padding: 20px;
+    background-color: #104430;
+    border-radius: 10px;
+}
+
+section h1, section h2 {
+    color: #81c784;
+}
+
+section h3 {
+    color: #a5d6a7;
+    margin-top: 20px;
+}
+
+section ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+section ul li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Image container for each section */
+.section-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #1b5e3f;
+    border: 3px solid #66bb6a;
+    border-radius: 10px;
+    color: #a5d6a7;
+    font-style: italic;
+}
+
+.section-image > figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+/* Figure and caption for image credits */
+.section-image figure {
+    width: 100%;
+    height: 400px;
+    margin: 0;
+    position: relative;
+}
+
+.img-overlay {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    font-size: 0.85em; /* smaller than body text */
+    color: #e0f2e9;
+    background: rgba(13,59,46,0.6);
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+.img-credit {
+    display: block;
+    font-size: 0.7em;
+    color: #a5d6a7;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #1b5e3f;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 40px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #e8f5e9;
+    margin: 4px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    body > *:not(hr, .header_text) {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    section {
+        margin: 20px 5%;
+        padding: 15px;
+    }
+    
+    .header_text {
+        font-size: 300%;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .nav-menu.active {
+        max-height: 500px;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    /* Mobile dropdown adjustments */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border: none;
+        background-color: #0d3b2e;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        max-height: 300px;
+    }
+    
+    .dropdown-toggle::after {
+        content: " ▼";
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-toggle::after {
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    
+    .section-image {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body > *:not(hr, .header_text) {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    
+    section {
+        margin: 15px 2%;
+        padding: 10px;
+    }
+    
+    .header_text {
+        font-size: 200%;
+    }
+    
+    .section-image {
+        height: 200px;
+    }
+}
+
+a {
+    color: rgb(125, 254, 147);
+}
+
+a:hover {
+    color: rgb(89, 193, 106)
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Momo Trust Display', sans-serif;
+}
+
+h3 {
+    font-size: 150%;
+}

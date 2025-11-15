@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Adaptations - Ferret's School Work</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+            
+            // Close mobile menu after selection
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        }
+        
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+        
+        function toggleDropdown(event) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                const dropdown = event.target.closest('.dropdown');
+                dropdown.classList.toggle('active');
+            }
+        }
+        
+        // Show home section by default when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            showSection('home');
+        });
+    </script>
+</head>
+<body>
+    <span class="subtitle_text">Ferret's School Work</span>
+    <span class="header_text"><b>Animal Adaptations</b></span>
+    <hr>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="showSection('home')" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="javascript:void(0)" onclick="toggleDropdown(event)" class="nav-link dropdown-toggle">Biomes</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="showSection('forest')" class="dropdown-link">Forest</a></li>
+                    <li><a href="javascript:void(0)" onclick="showSection('desert')" class="dropdown-link">Desert</a></li>
+                    <li><a href="javascript:void(0)" onclick="showSection('ocean')" class="dropdown-link">Ocean</a></li>
+                    <li><a href="javascript:void(0)" onclick="showSection('arctic')" class="dropdown-link">Arctic</a></li>
+                    <li><a href="javascript:void(0)" onclick="showSection('grassland')" class="dropdown-link">Grassland</a></li>
+                    <!-- Rainforest removed from nav (content merged into Forest section) -->
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="showSection('Adaptations')" class="nav-link">Adaptations</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="showSection('bibliography')" class="nav-link">Bibliography</a>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to Animal Adaptations</h1>
+        <div class="section-image">
+            <figure>
+                <!-- Add your image here: <img src="home-image.jpg" alt="Animal Adaptations"> -->
+                <img src="image/giraffe_1.jpg" alt="Giraffe (no i thought it was a usb stick)">
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Photo by <a href="https://unsplash.com/@nxn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nikolay Tchaouchev</a> on <a href="https://unsplash.com/photos/giraffe-standing-near-tree-at-daytime-LK4qTPvWdnM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+        </div>
+        <h2>Natural Selection</h2>
+        <p>Charles Darwin developed the idea of natural selection after travelling for 5 years to study plants, fossils and animals in South America and on Pacific islands. In 1859, he made the world aware of natural selection in his book, <em>On the Origin of Species</em>.</p>
+        
+        <p>Natural selection is where living organisms adapt/change. As National Geographic puts it, the environment for any living being is naturally variable. This variation means some individuals have traits better suited to their environment than others. Individuals with traits that give them an advantage (adaptive traits) are more likely to survive and therefore reproduce.</p>
+        
+        <p>These individuals reproduce with other individuals with the same traits, and then their offspring have a high likelihood of also having the traits, and the cycle continues until the advantageous traits are more common in the population. Through natural selection, favourable traits are passed through generations.</p>
+        
+        <p>Natural selection can lead to speciation (where one species becomes so different with the different traits, a new and distinct species arises). It is one of the processes that can drive evolution and helps to explain the great differences between species on Earth.</p>
+        
+        <p>Charles Darwin actually chose the name of "Natural Selection" to contrast with "Artificial Selection" - where humans specifically target animals with a trait to select something preferable - a great example of this is in the breed of dog, pug. Humans favoured the ways the pugs looked, in consequence, actually causing many diseases because of human selfishness.</p>
+        
+        <p>Mutations are changes in the structure of the molecules that make up genes, called DNA. The mutation of genes is a very important source of genetic variation within a population. Mutations can be both random (e.g. when replicating cells make errors) or can happen as a result of exposure (e.g. harmful chemicals/radiation). Mutations can be harmful (I personally thought that mutations were always harmful a while back), neutral (basically not really changing anything) or even helpful (resulting in a new trait that gives individuals an advantage).</p>
+        
+        <p>He actually didn't know that genes existed, but he could tell that traits can be inherited - passed from parents to children and so on and so forth.</p>
+    </section>
+    
+    <!-- Biomes Sections -->
+    <section id="forest" class="biome-section">
+        <h1>Forest Biome</h1>
+        <div class="section-image">
+            <figure>
+                <img src="image/forest.jpg" alt="Forest">
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Image credit: </figcaption>
+        </div>
+        <p>"Forest" broadly refers to an area that has a large number of trees. There are 3 main types of forest: tropical, temperate and boreal. Experts have estimated that forests cover ~30% of the Earth's surface.</p>
+        
+        <h3>Tropical Forests/Rainforests</h3>
+        <p>Tropical forests are common in areas close to the equator, e.g. Southeast Asia, sub-Saharan Africa and Central America. Temperatures in tropical forests are around 20-31ºC. Tropical rainforests are a great example of biodiversity, with animals ranging from the endangered harpy eagle (scarce throughout Central and South America due to habitat loss) to the poison dart frog (one of the most poisonous animals on Earth). Tropical mangrove forests (no, they didn't come from Minecraft), characterised by trees and shrubs that grow in salty water, are found in the (sub/)tropics.</p>
+        
+        <h3>Temperate Forests</h3>
+        <p>A temperate forest is a vegetation type with a mainly continuous cover of broad-leaved trees, occurring ~25/50° latitude in the Northern and Southern hemispheres. Towards the polar region, they slowly switch into boreal forests (more on them later). Temperate forests are classified into 2 main groups: deciduous and evergreen.</p>
+        
+        <h4>Deciduous</h4>
+        <p>Deciduous forests are often found in regions of the Northern Hemisphere with moist/warm summers and frosty winters. Mainly, North America, East Asia and Western Europe. Deciduous forests have some of the most well-known vegetation - oaks, maples and mosses - and they are often found in the Eastern US, Canada, Europe, China and Japan & and other polar/tropics regions.</p>
+        
+        <p>During autumn, trees change colour and lose their leaves in preparation for winter. Because it gets so freezing cold, trees have adapted to go into a period of sleep and have thick bark.</p>
+        
+        <h4>Evergreen</h4>
+        <p>Evergreen (except for boreal forests) typically grow in areas with nearly no frost in winter. The evergreen has two categories - broad-leaved forests and <em>sclerophyllous</em> forests. The former forests grow in regions with higher rainfall, while the latter in lower rainfall. Broad-leaved forests dominate the natural vegetation of New Zealand, and are often found in Southern China, Korea, Japan and Eastern Australia.</p>
+        
+        <p>The shrubs and grasses in the understory act an important role in wildfires, while the overstory is mainly broadleaf evergreen trees or needle-leafed evergreens. As the "evergreen" name suggests, the trees are <em>almost</em> always green, so they won't turn yellow and fall down.</p>
+        
+        <h3>Boreal Forests/Taigas</h3>
+        <p>A taiga (aka boreal forest) is characterised by forests of pines, spruces (I know them from somewhere…) and larches (one of the most abundant plants on Earth). In North America, it covers a significant portion of Alaska, Canada and parts of the Northern United States. In Eurasia (Europe <em>and</em> Asia combined), it covers loads of Sweden, Finland, Russia, Norway, Estonia, some Scotland - basically almost everywhere at least a little bit.</p>
+        
+        <p>Taigas, as we know them today, are actually quite recent. They have only existed for the last ~23,000 years.</p>
+        
+        <p>The term "taiga" is not consistent across all cultures. In US/Canadian English, they use "boreal forest" for more southerly regions, while they use "taiga" for more northerly regions.</p>
+        
+        <h3>Animals of Forests</h3>
+        <h4>Poison Dart Frog</h4>
+        <p>Poison dart frogs are from the family Dendrobatidae, which are native to tropical Central/South America. They are active during the day, and often have brightly coloured bodies. The bright colouration aligns with the species' toxicity, making them aposematic (i.e., colouration or markings that warn or repel predators). Many species of the family are threatened by human infrastructure intruding on their habitats.</p>
+        
+        <p>Humans have sweat glands, but poison dart frogs have toxin glands! The toxin is released when the frog feels endangered. It is believed that the frogs get their poison by eating toxic insects and then sequestering and modifying the chemicals to produce their potent poison. The most powerful poison dart frog (Golden poison dart frog) carries enough poison to kill ~10 adult humans!</p>
+        
+        <p>Most poison dart frog species are around 10-15mm in length, allowing them to navigate through dense forests and squeeze into tight spaces, climb trees and perch on leaves to evade predators and catch their insect prey.</p>
+        
+        <p>Male poison dart frogs use their large vocal sacs to create loud, complex calls. These calls are crucial not only for mating, but also for signalling their position to other males and defending their territory. This adaptation is the key to their reproductive success and survival.</p>
+        
+        <h4>Squirrel</h4>
+        <p>Squirrels are members of the family <em>Sciuridae</em>, which is home to small and medium-sized rodents. Squirrels are small animals - but not always, they range from 10cm to 127cm and can weigh up to 8kg. Squirrels usually have thin bodies with long, bushy tails and large eyes.</p>
+        
+        <p>Squirrels have excellent vision due to their large eyes, which is important for tree-dwelling species. Most have great touch, with whiskers on their limbs, not only on their heads.</p>
+        
+        <p>The tail has adapted to keep rain, wind or cold off itself, to cool off when hot (by pumping blood through the tail), acting as a parachute when jumping, as a counterbalance and to signal with. Yes, that was all in one sentence, yes, squirrels are amazing.</p>
+        
+        <p>Sadly, many young squirrels die in the first year of their life. Adult squirrels can have ~5-10 years of lifespan in the wild, and ~10-20 in captivity. Young death may occur when a nest falls from a tree, where the mother may abandon her young.</p>
+        
+        <h4>Deer</h4>
+        <p>The largest living deer is the moose, ~2.6m tall and up to 800kg heavy. Very different to the moose, there's the northern pudu - reaching 32cm and ~3.3-6kg in weight.</p>
+        
+        <p>The colour of a deer usually varies from red and brown, though it can be really dark (chocolate brown) in deer such as the tufted deer, or can have a greyish hint in elk. They can have white spots in animals such as the chital, fallow and sika deer. Deer go through two moults (where they shed old hair) each year, and in those moults, they can change the entire characteristics of the coat (e.g. red deer - where the red, thin summer coat is replaced by the greyish brown, dense coat in autumn, for the summer coat in the following spring.</p>
+    </section>
+    
+    <section id="desert" class="biome-section">
+        <h1>Desert Biome</h1>
+        <div class="section-image">
+            <figure>
+                <img src="image/desert.jpg" alt="Desert">
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Image credit: </figcaption>
+        </div>
+        <p>Deserts cover ~20% of the Earth's surface. The biome has a layer of soil that can either be sandy, gravely or stony, depending on the type of desert.</p>
+        
+        <p>Deserts only get around 50cm of rain/year, therefore animals in this climate have adapted to live in dry areas. This isn't just for animals, however. Plants have adapted to conserve water (e.g. the cacti, having enlarged stems to store water, as well as spines to protect this water from thirsty animals.</p>
+        
+        <p>There are 4 types of desert.</p>
+        
+        <p><strong>Arid deserts</strong> are warm and dry all year. Some examples of arid deserts include the Sahara Desert and the Mojave Desert (pronounced mo-ha-ve).</p>
+        
+        <p><strong>Semi-arid deserts</strong> are slightly cooler than arid deserts, as the dry summers are then followed by rain. Semi-arid deserts are often found in North America, Eurasia (Europe + Asia) and Greenland.</p>
+        
+        <p><strong>Cold deserts</strong> are dry but have extremely low temperatures compared to the other types of deserts. An example of a cold desert would be the Antarctic.</p>
+        
+        <p><strong>Coastal deserts</strong> are more humid than other deserts. Although there are large fogs coming in from the coast, rainfall is still scarce. The Atacama Desert of Chile is an example of these deserts.</p>
+        
+        <h3>Animals of Deserts</h3>
+        
+        <h4>Camel</h4>
+        <p>Camels are known as "ships of the desert" for a reason. They have long been valued as saddle animals. And were also exploited for milk, meat, wool and hides. The dromedary (camel with one hump) was domesticated ~3000-2000 BCE in Arabia while the Bactican (two humps) by at least 4000BCE in the steppes of Central Asia.</p>
+        
+        <p>Today we have ~13 million dromedary camels domesticated and ~97 domesticated breeds are in India and in the Horn of Africa. Wild dromedaries are now considered extinct, although there is a large feral population in Australia. About one million domesticated Bactrian camels are in a range from the Middle East to China and Mongolia. The IUCN (International Union for Conservation of Nature) has classified the wild Bactrian camel as a critically endangered species since 2002. The largest population is ~650 adult camels in the Gobi desert.</p>
+        
+        <p>They have adapted to the desert biome with their thick, long eyelashes. This is to protect their eyes from sand and dust. The lashes also keep particles out of their eyes. And, it keeps them shielded from the sun (I need this, where can I get it). The eyelashes also reduce evaporation from the eye's surface, keeping the eyeball moist and healthy.</p>
+        
+        <p>They have the ability to close their nostrils. This keeps dust particles out of their noses. It also reduces irritation and respiratory problems caused by inhaling dust. The ability to close their nostrils allow camels to conserve water. This is essential in desert conditions where water is scarce.</p>
+        
+        <h4>Desert Iguana</h4>
+        <p>The desert iguana is a pale grey tan to cream with a pale lower torso. There is a light brown pattern on their back and sides, and brown spots near the legs and stripes along the tail. They have blunt heads, large and oval-shaped earholes, nicely-built limbs and long tails. The tail of a desert iguana is 1.5x longer than their body from snout to vent.</p>
+        
+        <p>They are 41-61cm long and they weigh 60-90g.</p>
+        
+        <p>Their main habitat is in the Mojave desert, southwestern Utah and the Sonoran desert region. They can also be found in the Gulf of California Islands.</p>
+        
+        <p>They live in creosote bushes, sandy desert scrublands and rocky steambeds. In the southern part of its range, they are in arid subtropical scrubs and tropical deciduous forests.</p>
+        
+        <h4>Fennec Fox</h4>
+        <p>Fennec foxes are about 35-41cm long and they weigh 0.9-1.4kg.</p>
+        
+        <p>They have large ears compared to the rest of their body, clocking in at around 9-10cm long. Their ear-to-body ratio is the highest among all canids. The ears have reddish stripes on the back and whitish stripes on the edges.</p>
+        
+        <p>They have small and sharp teeth, with the canines being smaller than in most other canids.</p>
+        
+        <p>The fennec fox are the smallest of the foxes in the canid family. They have large black eyes, a black nose, a narrow muzzle and a tail that reduces off at the end and ends with a black tip. They have heavily padded paws with fur.</p>
+        
+        <p>They are the colour of straw, but with dark streaks running from their inner eye to both sides of their mouth.</p>
+    </section>
+    
+    <section id="ocean" class="biome-section">
+        <h1>Ocean Biome</h1>
+        <div class="section-image">
+            <figure>
+                <!-- Add your image here: <img src="ocean-image.jpg" alt="Ocean Biome"> -->
+                Image placeholder
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Image credit: </figcaption>
+        </div>
+        <p>The aquatic biome (aka ocean) is the largest biome on Earth, covering ~75% of its surface. This biome has 2 sub-biomes: freshwater and marine.</p>
+        
+        <p>Freshwater oceans are <1% saline, but marine life has adapted to environments with high salinity. Freshwater areas are mainly ponds, lakes, rivers and streams. While the marine is in the ocean and salty seas.</p>
+        
+        <p>Ponds/lakes are still bodies of freshwater, where ponds are smaller than lakes. Life varies in lakes & ponds - in shallow, sunny waters, there is lots of life, like fish. However, in deep water, some decomposers thrive.</p>
+        
+        <p>Rivers/streams are moving bodies of freshwater. The waters in rivers & streams are usually made of runoff from glaciers or just rainwater. Rivers & streams usually run into a lake or the ocean. At the beginning of a fast-moving river/stream, water is clear and oxygen is abundant. As the water flows, it picks up debris, making the river/stream gradually increasingly cloudy. Oxygen levels are often affected.</p>
+        
+        <p>Oceans are large bodies of saltwater that span the majority of the Earth's surface. Like ponds and lakes, life in the ocean has adapted to be in certain parts of the water (e.g. the deepest parts of the ocean don't even get enough light to support photosynthesis, and most life can't live there, but some animals have found a way). In shallow waters, coral reefs can form. Coral reefs are incredibly diverse, having >1,000 species of fish.</p>
+        
+        <p>Estuaries are regions where freshwater and saltwater mix. Life in estuaries must have adapted to this mixture of saltwater & freshwater. Estuaries are the habitat of many fish & shellfish, as well as quite a few migratory birds that depend on estuaries for a place to next and raise their young.</p>
+        
+        <h3>Animals of Oceans</h3>
+        
+        <h4>Anglerfish</h4>
+        <p>Anglerfish are 20-100cm long, can weigh up to 50kg, and live for 10-15 years. They eat crustaceans, snails, small fish and some larger fish. They live in the depths of the Atlantic and Antarctic oceans.</p>
+        
+        <p>They're dark brown to grey and they have large heads and mouths with sharp, semi-transparent teeth.</p>
+        
+        <p>Their skin is usually loose and flabby, sometimes covered in small spines or fleshy projections called cirri. Males are smaller than females, at less then 30cm long, but females can reach around 1 meter in body width.</p>
+        
+        <p>Because they're so low down in the ocean (where there isn't much oxygen). They extract oxygen from the water that flows over the gills. They have large gill surfaces and blood vessels to better gather oxygen from the water.</p>
+        
+        <p>Female anglerfish have adapted to the darkness of the deep ocean by having a modified dorsal spine extending outward like a fishing pole. The tip of this spine has a bioluminescent lure, luring prey closer in the lightless depths. The light produced can be blue, green or yellow. The colour depends on the species and the types of bacteria that live in the lure.</p>
+        
+        <p>They eat squid, turtles and other animals that find their way onto the sea floor, dead or alive. All anglerfish are carnivores.</p>
+        
+        <h4>Queen Angelfish</h4>
+        <p>The queen angelfish grows up to around 45cm long and weighs up to 1.6kg. They live for around 15-20 years in the wild or captivity.</p>
+        
+        <p>When you see a queen angelfish, you may think it would stick out like a sore thumb. But in reality, it perfectly blends in with the bright colours of coral. It has eclectic blue or aqua highlights around its doral and back fins. Sometimes it has both colours as trim. Iridescent orange and purple highlights are also common.</p>
+        
+        <p>Queen angelfish may lay up to 10 million eggs, taking 48 hours to be able to swim and then around a month before they can come down to the reef to live.</p>
+        
+        <p>They live on warm water coral and rocky reefs in the Caribbean Sea and western parts of the Atlantic Ocean.</p>
+        
+        <p>Queen angelfish larvae mostly eat plankton (no, not <em>that</em> Plankton), then when they come to the reef, young queen angelfish eat algae and parasites off of larger fish. Adult queen angelfish feed almost exclusively on sponges they find around the reef. However, they can also be foragers that eat a variety of sessile reef plants and invertebrates.</p>
+        
+        <p>Their favourite foods include algae, hydroids, brozoans, gift coerals, tunicates, sea fans, jellyfish, anemones and loose organic matter fragments.</p>
+        
+        <h4>Sea turtle</h4>
+        <p>Sea turtles are 0.6-2m long and weigh 31-680kg. Their lifespan is unknown.</p>
+        
+        <p>Leatherback sea turtles are the largest and can weigh a massive 907kg. It's also the only sea turtle that doesn't have a hard, bony shell. Its carapace is somewhat flexible, and some would describe it as rubbery to the touch. The shells of other sea turtles are made of thick plates known as scutes.</p>
+        
+        <p>Sea turtles make really long migrations between feeding and breeding areas. The leatherback travels around 6000km each way. Sea turtles mate at sea, then go on beaches to lay their eggs. Female sea turtles dig a hole in the sand, then deposit their eggs (sometimes up to 100), cover it back up, and then return to the sea.</p>
+        
+        <p>After around 60 days, the eggs hatch and tiny hatchlings make their way from the nest to the water at night. Often, seabirds, crabs and other predators prey on young turtles, so they have to be careful.</p>
+        
+        <p>Natural light from the horizon guides the turtles into the sea, but lights from human infrastructure can confuse the turtles.</p>
+        
+        <p>6/7 sea turtle species are classified as threatened, endangered or critically endangered. Sadly due to human impact in the form of hunting, bycatch in fishing nets, pollution and climate change.</p>
+    </section>
+    
+    <section id="arctic" class="biome-section">
+        <h1>Arctic Biome (Tundra)</h1>
+        <div class="section-image">
+            <figure>
+                <!-- Add your image here: <img src="arctic-image.jpg" alt="Arctic Biome"> -->
+                Image placeholder
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Image credit: </figcaption>
+        </div>
+        <p>The tundra biome is a cold, frozen area with a short growing season, followed by bad conditions that make it hard for plants and animals to survive.</p>
+        
+        <p>Tundras form in two distinct cold and dry areas. Arctic tundras are found in high altitude areas, above the Arctic Circle - around Alaska, Canada, Russia, Greenland, Iceland and Scandinavia. Alpine tundras are located quite high on top of mountains, making overnight temperatures <0ºC.</p>
+        
+        <p>Tundra regions get ~<25cm of rain each year, meaning these areas are also sometimes considered deserts. They have cold, stretching winters with high wind speeds and average temperatures often <0ºC. Usually, only 6-10 weeks in the whole year are sufficient for the temperatures and long days required for plant growth. The soil is usually permafrost or soil that remains frozen throughout the entire year, usually leaving only a thin surface layer for plant roots to grow in. The soil in tundras also doesn't have many of the nutrients required for plant growth.</p>
+        
+        <p>By far the most unique feature is that they are mainly without trees. The tundra only has low-to-ground vegetation like shrubs, etc.</p>
+        
+        <p>Tundra animals have also adapted to these harsh conditions and take advantage of the explosion of plant growth. The wildlife includes small mammals - such as the Norway lemmings, arctic hares and arctic ground squirrels (squirrels!!!). There are also large mammals such as the caribou.</p>
+        
+        <p>The way animals can survive in this climate is by storing up fat to sustain and insulate them during winter. They also have thick coats of fur for further information. Some save energy through hibernation.</p>
+        
+        <p>Tundra insects also developed adaptations specifically for this climate. Mosquitoes have a chemical compound that acts as an antifreeze, lowering the point of freezing in their body fluids.</p>
+        
+        <p>Even though tundras are remote, it is actually becoming more and more threatened as people come into them to build or drill for oil, for example.</p>
+        
+        <p>The greatest danger to this biome is probably climate change. As the temperature rises, it affects the biome and the life in it, as well as melts the permafrost, emitting greenhouse gases that would further push forward global warming.</p>
+        
+        <h3>Animals of Tundras</h3>
+        
+        <h4>Arctic Fox</h4>
+        <p>Arctic foxes are mammals that live for 3-6 years, are 45-68cm long (with a tail up to 35cm) and weigh 2-7kg. They can be white, brown or even a blue grey, it depends on the time of year.</p>
+        
+        <p>Arctic foxes have thick white fur that helps them blend in <em>and</em> stay warm. Their fur is important for their survival in Arctic areas. Annoyingly, fur isn't always enough. In the polar winter, the temperature is almost always below -15ºC. Until spring comes, the arctic fox has to adapt to handle the cold.</p>
+        
+        <p>When an Arctic fox isn't trying to keep warm/avoid predators, they are on the hunt for food. They like to eat lemmings, but if they can't find any, they'll eat whatever they can find. Insects, berries and sometimes the feces of other animals.</p>
+        
+        <p>If they can't find food or the weather gets bad, they dig a snow den and hibernate for around 2 weeks. This slows their heart rate and metabolism, which helps them save energy so it doesn't have to eat as much.</p>
+        
+        <h4>Ptarmigan</h4>
+        <p>Ptarmigans are small birds. There are three main species of ptarmigans. They all live in North America and Eurasia, primarily in Arctic regions. The tree species are willow, white-tailed and rock ptarmigan.</p>
+        
+        <p>Ptarmigans look a bit like a chicken and a pigeon combined. Their feathers vary based on the season. Most species are a little about 30cm long and weigh around 400-800g. During the summer seasons, most ptarmigans are either brown or a dull tan, and during the winter, they're white, grey and black.</p>
+        
+        <p>Ptarmigans live in Arctic regions, which are cold and harsh. Most (sub/)species also live in alpine ecosystems, which are higher and colder than where trees can grow. The rock and willow ptarmigans live across North America and Eurasia, while the white-tailed ptarmigan only lives in Alaska and northwest Canada.</p>
+        
+        <p>Ptarmigans are mainly herbivores, but the young have to eat insects because they are high in protein and easy to digest. They usually eat grass, leaves, buds, flowers, twigs, seeds and more.</p>
+        
+        <p>For northern peoples, ptarmigan meat is an important part of culture and sometimes even daily life. In many areas, the government regulates hunting to protect the populations of these beautiful creatures. The population of these birds is mostly stable, and the IUCN lists all 3 species as Least Concern.</p>
+        
+        <p>Habitat destruction also poses a danger, and climate change is altering the habitats in the northern hemisphere every year.</p>
+        
+        <h4>Polar Bear</h4>
+        <p>Polar bears are mammals with a carnivorous diet. They live for 25-30 years. They weigh 400-725kg. Their head and body are 2-2.5m tall, and their tail is 7-12cm.</p>
+        
+        <p>Polar bears roam Arctic ice sheets and swim in the coastal waters of that area. They are strong swimmers, and their front paws are slightly webbed for better paddling. Some polar bears have been swimming hundreds of kilometres from land, though they probably cover the majority of that distance by floating on ice.</p>
+        
+        <p>They live in one of Earth's coldest environments and depend on a thick coat of insulated fur, which covers a warming layer of fat. Fur even grows on the bottom of their paws to protect them against cold surfaces and to get a grip on ice. The bear's stark white coat provides camouflage in the surrounding snow and ice. Under their fur, they have black skin to soak in the sun's warming rays.</p>
+        
+        <p>Polar bears usually prey on seals. In search of seals, they crack ice where seals may surface to breathe. However, polar bears will also eat carcasses, such as those of dead whales. Polar bears have no natural enemies.</p>
+        
+        <p>Females den by digging into deep snow drifts, which provide protection and insulation from the Arctic elements. They give birth in Winter, usually to twins. Young cubs live with their mothers for around 2.5 years to learn survival skills. Females aggressively protect their young, but receive no help from the males. In fact, males sometimes even kill their own young.</p>
+    </section>
+    
+    <section id="grassland" class="biome-section">
+        <h1>Grassland Biome</h1>
+        <div class="section-image">
+            <figure>
+                <!-- Add your image here: <img src="grassland-image.jpg" alt="Grassland Biome"> -->
+                Image placeholder
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Image credit: </figcaption>
+        </div>
+        <p>Grasslands are large, open areas of grass. Trees are rarely found in this biome. The animals in grasslands can range from something like the African elephant to species or prairie dogs.</p>
+        
+        <p>This biome has low rainfall, wildland fires and grazing by animals. Those 3 factors are what maintain the biome. The climate is only ideal for the growth of grasses, and the rainfall is enough to nourish grasses, but not a forest of trees.</p>
+        
+        <p>Frequent fires also maintain the grassland habitat. The grass is suited for growing back after a fire, but that can only work when there's just grass, as trees can't grow back fast enough.</p>
+        
+        <p>There are two types of grassland.</p>
+        
+        <p><strong>Temperate grasslands</strong> are known for their rich soil that has plentiful growth of grass. Temperate grasslands are often found in places like Eastern Europe and North America.</p>
+        
+        <p><strong>Savannas</strong> are in places with a warm climate with a rainy & dry season. Most of the rain falls in just a few months of the year. This creates a long, dry season that hinders tree growth. Savanas are famous in Africa, but they can also be found in Asia, South America and parts of Oceania.</p>
+        
+        <p>Humans have greatly changed the course of grasslands. Because of the rich soil in temperate grasslands, most of the grasslands in the US have been changed into fields for crops or grazing land for cattle. The loss of grasslands due to agriculture has affected multiple species.</p>
+        
+        <p>In African savannas, hunting (which is illegal) resulted in the loss of many large animals, even including elephants! The elephants protect the grasses of the savanna by squashing trees and shrubs. Without large animals to squash the trees, they can no longer overtake the grasses, causing savannas to turn into forests. The loss of grass causes less food for grazing animals.</p>
+        
+        <h3>Animals of Grasslands</h3>
+        
+        <h4>Cheetah</h4>
+        <p>Cheetahs are carnivorous mammals that live up to 14 years in the wild. Their body is 1-1.5m long, and their tail is 600-900cm long. They weigh 34-64kg.</p>
+        
+        <p>Cheetahs are high-speed animals with the ability to make quick and sudden turns to catch prey. Cheetahs' bodies have adapted to reach top speeds with their long, slim legs and hard foot pads, and their flexible spine that gives them such a long stride.</p>
+        
+        <p>They are well known for their tawny coasts covered in black spots, each arranged in a unique pattern to help the animals identify one another. Bold black stripes streak from the inner corners of their eyes down to both sides of their mouths and the ends of their tails have black rings.</p>
+        
+        <p>The cheetah's excellent eyesight helps it find prey during the day. The cheetah is hard to see because it perfectly blends in with the dry surroundings.</p>
+        
+        <p>They eat small to medium-sized animals, such as hares, impalas, wildebeest calves and gazelles. Because of their size, strength and predatory skills, some scientists consider cheetahs to be part of the "big cats". Unlike the rest of the big cats, they can't roar, however they can purr.</p>
+        
+        <p>Although they usually prefer open grasslands, cheetahs live in a range of habitats across eastern and southern Africa. Once found throughout Asia and Africa, cheetahs today are racing (see what I did there) towards extinction. The loss of their habitat and the declining numbers of their prey put together really threaten the future of these creatures.</p>
+        
+        <h4>Nile Crocodile</h4>
+        <p>The Nile Crocodile is one of the largest crocodiles. Females are easily noticeable as smaller than males. They have streamlined bodies and long, sturdy tails, and their hind feet are webbed. They have a special valve at the back of their throat that lets them move underwater to grab prey without getting water in their mouths.</p>
+        
+        <p>They are grey-olive in colour and have yellowish torsos. Young Nile crocodiles are identified by olive-brown colouration and black-coloured cross-banding all over the body and tail. When they grow up, the banding on their bodies becomes fainter.</p>
+        
+        <p>They are found in Africa.</p>
+        
+        <p>Nile crocodiles are solitary animals. But, they can occasionally be found feeding in small groups, consisting of several individuals. They often use a special technique - enclosing an area of water to trap fish within it. Then the dominant animals will decide in what order everyone will feed.</p>
+        
+        <p>Nile crocodiles are mainly nocturnal. During the day, they sunbathe or cool off in the water. The males are very territorial; they patrol and defend their territories, which usually include a part of the shoreline, extending around 50m into the water. The crocodiles usually dive for a couple of minutes, but they can remain submerged for up to 30 minutes when threatened. And, if they're completely inactive, they could hold their breath for up to 2 hours. They are surprisingly fast runners and have quite fast reflexes, but they get tired quickly.</p>
+        
+        <p>Nile crocodiles are carnivores and scavengers. They feed upon a large variety of animal species, including insects, amphibians, fish and land mammals such as giraffes or Cape buffaloes.</p>
+        
+        <h4>Meerkat</h4>
+        <p>Meerkats live in the deserts and grasslands in the southern tip of Africa. They are extremely cute, with bushy, stripy brown fur and a small, pointed face with large eyes surrounded by dark patches.</p>
+        
+        <p>They are around 50cm long, including their tail. They weigh up to 900g.</p>
+        
+        <p>They are extremely social animals, and they live together in burrows, which they dig with their long, sharp claws. Living underground means that they are protected from predators and out of the harsh heat. The burrows can be 5m long and contain multiple entrances, tunnels and rooms. A group can use up to 5 individual burrows at a time.</p>
+        
+        <p>Meerkats will only go outside during the daytime. Each morning, at sunrise, the group emerges and begins searching for food. They use their amazing sense of smell to locate their favourite foods, which include beetles, caterpillars, spiders and scorpions. They'll also eat small reptiles, eggs, birds and plants. Back at the burrow, some babysitters stay behind to watch over the newborn pups. This duty rotates to different members of the group, and the babysitters often don't get food for that whole day.</p>
+        
+        <p>Meerkats dig safe places called bolt-holes throughout their foraging area, where they can hide in an emergency. If caught in the open by a predator, it will try to look fierce by lying on its back and showing its teeth and claws. If a group is confronted, the meerkats will stand together, arching their backs, raising their hair and hissing. This sometimes fools an attacker into thinking they are a single large, vicious animal. Meerkats are abundant throughout their area and are not considered threatened or endangered.</p>
+    </section>
+    
+    <!-- Rainforest section removed; content is maintained under Forest Biome -->
+    
+    <!-- Adaptations Section -->
+    <section id="Adaptations">
+        <h1>What Are Adaptations?</h1>
+        <div class="section-image">
+            <figure>
+                <!-- Add your image here: <img src="Adaptations-image.jpg" alt="Animal Adaptations"> -->
+                Image placeholder
+                <figcaption class="img-caption">Image credit: </figcaption>
+            </figure>
+        </div>
+        <p>Adaptations are special features or behaviors that help animals survive in their environment. Through the process of natural selection, favourable traits are passed through generations. There are three main types of adaptations:</p>
+        
+        <h3>Structural Adaptations</h3>
+        <p>Physical features of an animal's body, like sharp claws, thick fur, or a long neck. Examples include:</p>
+        <ul>
+            <li>Camel's thick eyelashes to protect from sand and dust</li>
+            <li>Poison dart frog's bright colors to warn predators</li>
+            <li>Polar bear's thick fur and black skin for warmth</li>
+            <li>Cheetah's long, slim legs for high speed</li>
+        </ul>
+        
+        <h3>Behavioral Adaptations</h3>
+        <p>Things animals do to survive, like hibernating in winter or migrating to warmer places. Examples include:</p>
+        <ul>
+            <li>Arctic fox digging snow dens and hibernating for up to 2 weeks</li>
+            <li>Meerkat social behavior with sentinel watching and group defense</li>
+            <li>Sea turtle long migrations between feeding and breeding areas</li>
+            <li>Polar bear hunting techniques at ice holes for seals</li>
+        </ul>
+        
+        <h3>Physiological Adaptations</h3>
+        <p>Internal body processes, like how a camel can go without water or how snakes produce venom. Examples include:</p>
+        <ul>
+            <li>Camel's ability to close nostrils to conserve water</li>
+            <li>Poison dart frog's toxin glands for defense</li>
+            <li>Anglerfish's bioluminescent lure for hunting in deep ocean</li>
+            <li>Mosquitoes' antifreeze compounds in tundra climates</li>
+        </ul>
+        
+        <p><strong>Remember:</strong> These adaptations develop through natural selection over many generations, where individuals with advantageous traits are more likely to survive and reproduce.</p>
+    </section>
+    
+    <!-- Bibliography Section -->
+    <section id="bibliography">
+        <h1>Bibliography</h1>
+        <div class="section-image">
+            <figure>
+                <img src="image/books.jpg" alt="Books">
+                <span class="img-overlay" aria-hidden="true"></span>
+            </figure>
+            <figcaption class="img-credit">Image credit: </figcaption>
+        </div>
+        <p>Sources and references used for this project:</p>
+        
+        <h2>Natural Selection</h2>
+        <ul>
+            <li>Natural Selection 2025, Nationalgeographic.org, viewed 12 November 2025, <a href="https://education.nationalgeographic.org/resource/natural-selection/">https://education.nationalgeographic.org/resource/natural-selection/</a>.</li>
+            <li>Pugs: The Result Of Genetic Modifications Encouraged By Human's Selfish Whims 2017, Cultura Colectiva, viewed 12 November 2025, <a href="https://culturacolectiva.com/en/history/pugs-the-result-of-genetical-modifications-encouraged-by-humans-selfish-whims/">https://culturacolectiva.com/en/history/pugs-the-result-of-genetical-modifications-encouraged-by-humans-selfish-whims/</a>.</li>
+        </ul>
+        
+        <h2>Forest</h2>
+        <ul>
+            <li>National Geographic 2023, Nationalgeographic.org, viewed 12 November 2025, <a href="https://education.nationalgeographic.org/resource/forest-biome/">https://education.nationalgeographic.org/resource/forest-biome/</a>.</li>
+            <li>Wikimedia Contributors 2004, family of amphibians, Wikipedia.org, Wikimedia Foundation, Inc., viewed 12 November 2025, <a href="https://en.wikipedia.org/w/index.php?title=Poison_dart_frog&oldid=1316838845">https://en.wikipedia.org/w/index.php?title=Poison_dart_frog&oldid=1316838845</a>.</li>
+            <li>Wikimedia Contributors 2003, specific ecosystem, Wikipedia.org, Wikimedia Foundation, Inc., viewed 12 November 2025, <a href="https://en.wikipedia.org/w/index.php?title=Tropical_rainforest&oldid=1314964865">https://en.wikipedia.org/w/index.php?title=Tropical_rainforest&oldid=1314964865</a>.</li>
+            <li>Romero, NA 2023, Animals in the Tropical Rainforest, animalwised.com, Animalwised.com, viewed 12 November 2025, <a href="https://www.animalwised.com/animals-in-the-tropical-rainforest-4850.html">https://www.animalwised.com/animals-in-the-tropical-rainforest-4850.html</a>.</li>
+            <li>Zooologist 2023, Poison Dart Frog Adaptations : Physiological, Behavioral, and Structural Marvels - Zooologist, Zooologist, viewed 12 November 2025, <a href="https://zooologist.com/poison-dart-frog-adaptations/">https://zooologist.com/poison-dart-frog-adaptations/</a>.</li>
+            <li>Smith, JMB 1998, Temperate forest | Description, Types, Plants, Animals, & Facts, Encyclopedia Britannica, viewed 12 November 2025, <a href="https://www.britannica.com/science/temperate-forest">https://www.britannica.com/science/temperate-forest</a>.</li>
+            <li>NASA 2025, Nasa.gov, NASA Earth Observatory, viewed 12 November 2025, <a href="https://www.earthobservatory.nasa.gov/biome/biotemperate.php">https://www.earthobservatory.nasa.gov/biome/biotemperate.php</a>.</li>
+            <li>Staff Writer 2015, What Are the Features of Temperate Evergreen Forests?, Reference.com, amg, viewed 12 November 2025, <a href="https://www.reference.com/science-technology/features-temperate-evergreen-forests-5e3f0402c31ff4f">https://www.reference.com/science-technology/features-temperate-evergreen-forests-5e3f0402c31ff4f</a>.</li>
+            <li>Wikimedia Contributors 2002, biome characterized by coniferous forests, Wikipedia.org, Wikimedia Foundation, Inc., viewed 12 November 2025, <a href="https://en.wikipedia.org/wiki/Taiga">https://en.wikipedia.org/wiki/Taiga</a>.</li>
+            <li>Wikimedia Contributors 2002, genus of plants, Wikipedia.org, Wikimedia Foundation, Inc., viewed 12 November 2025, <a href="https://en.wikipedia.org/wiki/Larch">https://en.wikipedia.org/wiki/Larch</a>.</li>
+            <li>Wikimedia Contributors 2001, family of rodents, Wikipedia.org, Wikimedia Foundation, Inc., viewed 12 November 2025, <a href="https://en.wikipedia.org/wiki/Squirrel">https://en.wikipedia.org/wiki/Squirrel</a>.</li>
+            <li>Wikimedia Contributors 2001, Deer, Wikipedia.org, Wikimedia Foundation, Inc., viewed 12 November 2025, <a href="https://en.wikipedia.org/wiki/Deer">https://en.wikipedia.org/wiki/Deer</a>.</li>
+        </ul>
+        
+        <h2>Desert</h2>
+        <ul>
+            <li>National Geographic 2025, Nationalgeographic.org, viewed 13 November 2025, <a href="https://education.nationalgeographic.org/resource/desert-biome/">https://education.nationalgeographic.org/resource/desert-biome/</a>.</li>
+            <li>Active Wild Admin 2021, Desert Animals List With Pictures & Amazing Facts, Active Wild, viewed 14 November 2025, <a href="https://www.activewild.com/desert-animals/">https://www.activewild.com/desert-animals/</a>.</li>
+            <li>Herbison, L 1999, Camel | Description, Humps, Food, Types, Adaptations, & Facts, Encyclopedia Britannica, viewed 14 November 2025, <a href="https://www.britannica.com/animal/camel">https://www.britannica.com/animal/camel</a>.</li>
+            <li>Wildlife Informer 2022, 12 Examples of Camel Adaptations - Wildlife Informer, Wildlife Informer, viewed 14 November 2025, <a href="https://wildlifeinformer.com/camel-adaptions/">https://wildlifeinformer.com/camel-adaptions/</a>.</li>
+            <li>Chatterjee, S 2023, Desert Iguana – Facts, Size, Habitat, and Pictures, Animal Spot: Online Animal Guide With Facts, Pictures, And More!, viewed 14 November 2025, <a href="https://www.animalspot.net/desert-iguana.html">https://www.animalspot.net/desert-iguana.html</a>.</li>
+            <li>Sil, A 2022, Fennec Fox – Facts, Size, Lifespan, Habitat, and Pictures, Animal Spot: Online Animal Guide With Facts, Pictures, And More!, viewed 14 November 2025, <a href="https://www.animalspot.net/fennec-fox.html">https://www.animalspot.net/fennec-fox.html</a>.</li>
+        </ul>
+        
+        <h2>Ocean</h2>
+        <ul>
+            <li>National Geographic 2023, Nationalgeographic.org, viewed 13 November 2025, <a href="https://education.nationalgeographic.org/resource/aquatic-biome/">https://education.nationalgeographic.org/resource/aquatic-biome/</a>.</li>
+            <li>Hamna Faizan 2022, Anglerfish, Ocean Info, oceaninfo, viewed 14 November 2025, <a href="https://oceaninfo.com/animals/anglerfish/">https://oceaninfo.com/animals/anglerfish/</a>.</li>
+            <li>American Oceans 2021, American Oceans, viewed 14 November 2025, <a href="https://www.americanoceans.org/species/queen-angelfish/">https://www.americanoceans.org/species/queen-angelfish/</a>.</li>
+            <li>National Geographic 2019, Animals, viewed 14 November 2025, <a href="https://www.nationalgeographic.com/animals/reptiles/facts/sea-turtles">https://www.nationalgeographic.com/animals/reptiles/facts/sea-turtles</a>.</li>
+        </ul>
+        
+        <h2>Tundra</h2>
+        <ul>
+            <li>National Geographic 2025, Nationalgeographic.org, viewed 13 November 2025, <a href="https://education.nationalgeographic.org/resource/tundra-biome/">https://education.nationalgeographic.org/resource/tundra-biome/</a>.</li>
+            <li>National Geographic Kids 2015, Animals, viewed 15 November 2025, <a href="https://kids.nationalgeographic.com/animals/mammals/facts/arctic-fox">https://kids.nationalgeographic.com/animals/mammals/facts/arctic-fox</a>.</li>
+            <li>Oldham, C 2019, Ptarmigan - Description, Habitat, Image, Diet, and Interesting Facts, Animals Network, viewed 15 November 2025, <a href="https://animals.net/ptarmigan/">https://animals.net/ptarmigan/</a>.</li>
+            <li>National Geographic, Animals, viewed 15 November 2025, <a href="https://www.nationalgeographic.com/animals/mammals/facts/polar-bear">https://www.nationalgeographic.com/animals/mammals/facts/polar-bear</a>.</li>
+        </ul>
+        
+        <h2>Grassland</h2>
+        <ul>
+            <li>National Geographic 2023, <em>Grassland Biome</em>, National Geographic, viewed 13 November 2025, <a href="https://education.nationalgeographic.org/resource/grassland-biome/">https://education.nationalgeographic.org/resource/grassland-biome/</a>.</li>
+            <li>National Geographic Kids 2015, <em>Animals</em>, National Geographic, viewed 15 November 2025, <a href="https://kids.nationalgeographic.com/animals/mammals/facts/cheetah">https://kids.nationalgeographic.com/animals/mammals/facts/cheetah</a>.</li>
+            <li>McGhee, K and McKay, G 2006, <em>Children's Encyclopedia of Animals</em>, The Five Mile Press, Australia.</li>
+            <li>Mason, J 2025, <em>Nile Crocodile - Facts, Diet, Habitat & Pictures</em>, Animalia.bio, viewed 15 November 2025, <a href="https://animalia.bio/nile-crocodile">https://animalia.bio/nile-crocodile</a>.</li>
+            <li>National Geographic Kids 2015, <em>Meerkat - Animals</em>, viewed 15 November 2025, <a href="https://kids.nationalgeographic.com/animals/mammals/facts/meerkat">https://kids.nationalgeographic.com/animals/mammals/facts/meerkat</a>.</li>
+        </ul>
+
+        <h2>Images</h2>
+        <ul>
+            <li>
+                Photo by <a href="https://unsplash.com/@nxn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nikolay Tchaouchev</a> on <a href="https://unsplash.com/photos/giraffe-standing-near-tree-at-daytime-LK4qTPvWdnM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </li>
+            <li>
+                Photo by <a href="https://unsplash.com/@rey_7?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rey Seven</a> on <a href="https://unsplash.com/photos/brown-books-closeup-photography-_nm_mZ4Cs2I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </li>
+            <li>
+                Photo by <a href="https://unsplash.com/@sebastian_unrau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Unrau</a> on <a href="https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </li>
+            <li>
+                Photo by <a href="https://unsplash.com/@yuli_superson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Juli Kosolapova</a> on <a href="https://unsplash.com/photos/dusty-desert-valley-Us_dv71f1bc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </li>
+        </ul>
+        <p></p>
+    </section>
+
+    <script>
+        // Populate overlay text with image alt attributes
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('.section-image figure').forEach(function(fig){
+                var img = fig.querySelector('img');
+                var overlay = fig.querySelector('.img-overlay');
+                if(img && overlay){
+                    overlay.textContent = img.getAttribute('alt') || '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
