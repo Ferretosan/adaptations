@@ -43,13 +43,37 @@
             }
         }
         
+        function closeMobileModal() {
+            const modal = document.getElementById('mobileModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
         // Show home section by default when page loads
         window.addEventListener('DOMContentLoaded', () => {
             showSection('home');
+            
+            // Show mobile warning modal on mobile devices
+            if (window.innerWidth <= 768) {
+                const modal = document.getElementById('mobileModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                }
+            }
         });
     </script>
 </head>
 <body>
+    <!-- Mobile Warning Modal -->
+    <div id="mobileModal" class="mobile-modal">
+        <div class="modal-content">
+            <h2>Mobile Notice</h2>
+            <p>This website is not fully optimised for mobile devices. For the best experience, please view on a desktop or tablet.</p>
+            <button onclick="closeMobileModal()" class="modal-button">Continue Anyway</button>
+        </div>
+    </div>
+    
     <span class="subtitle_text">Ferret's School Work</span>
     <span class="header_text"><b>Animal Adaptations</b></span>
     <hr>
@@ -514,7 +538,7 @@
         <div class="section-image">
             <figure>
                 <!-- Add your image here: <img src="grassland-image.jpg" alt="Grassland Biome"> -->
-                <img src="image/grassland.jpg" alt="A vast, barren grassland">
+                <img src="image/grassland.jpg" alt="A vast grassland">
                 <span class="img-overlay" aria-hidden="true"></span>
             </figure>
             <figcaption class="img-credit">Photo by <a href="https://unsplash.com/@klimy4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stanislav Klimanskii</a> on <a href="https://unsplash.com/photos/green-field-8krv1j-huaQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
