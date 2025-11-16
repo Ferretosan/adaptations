@@ -103,9 +103,13 @@
             }
         }
         
-        // Show home section by default when page loads
+        // Handle initial section based on URL hash and keep in sync on changes
         window.addEventListener('DOMContentLoaded', () => {
-            showSection('home');
+            const getInitial = () => {
+                const hash = window.location.hash ? window.location.hash.slice(1) : 'home';
+                return document.getElementById(hash) ? hash : 'home';
+            };
+            showSection(getInitial());
             
             // Show mobile warning modal on mobile devices
             if (window.innerWidth <= 768) {
@@ -143,6 +147,11 @@
                     }
                 });
             });
+            // When hash changes (e.g., clicking a nav link), switch sections
+            window.addEventListener('hashchange', () => {
+                const target = window.location.hash ? window.location.hash.slice(1) : 'home';
+                showSection(document.getElementById(target) ? target : 'home');
+            });
         });
     </script>
 </head>
@@ -168,24 +177,24 @@
         </button>
         <ul id="primary-navigation" class="nav-menu" role="menubar">
             <li class="nav-item" role="none">
-                <a href="javascript:void(0)" onclick="showSection('home')" class="nav-link">Home</a>
+                <a href="#home" class="nav-link">Home</a>
             </li>
             <li class="nav-item dropdown" role="none">
                 <a href="javascript:void(0)" onclick="toggleDropdown(event)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Biomes</a>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" onclick="showSection('forest')" class="dropdown-link">Forest</a></li>
-                    <li><a href="javascript:void(0)" onclick="showSection('desert')" class="dropdown-link">Desert</a></li>
-                    <li><a href="javascript:void(0)" onclick="showSection('ocean')" class="dropdown-link">Ocean</a></li>
-                    <li><a href="javascript:void(0)" onclick="showSection('arctic')" class="dropdown-link">Tundra</a></li>
-                    <li><a href="javascript:void(0)" onclick="showSection('grassland')" class="dropdown-link">Grassland</a></li>
+                    <li><a href="#forest" class="dropdown-link">Forest</a></li>
+                    <li><a href="#desert" class="dropdown-link">Desert</a></li>
+                    <li><a href="#ocean" class="dropdown-link">Ocean</a></li>
+                    <li><a href="#arctic" class="dropdown-link">Tundra</a></li>
+                    <li><a href="#grassland" class="dropdown-link">Grassland</a></li>
                     <!-- Rainforest removed from nav (content merged into Forest section) -->
                 </ul>
             </li>
             <li class="nav-item" role="none">
-                <a href="javascript:void(0)" onclick="showSection('Adaptations')" class="nav-link">Adaptations</a>
+                <a href="#Adaptations" class="nav-link">Adaptations</a>
             </li>
             <li class="nav-item" role="none">
-                <a href="javascript:void(0)" onclick="showSection('bibliography')" class="nav-link">Bibliography</a>
+                <a href="#bibliography" class="nav-link">Bibliography</a>
             </li>
         </ul>
     </nav>
