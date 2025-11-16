@@ -23,6 +23,9 @@
                 selectedSection.style.display = 'block';
             }
             
+            // Update body data attribute for accent color
+            document.body.setAttribute('data-active-section', sectionId);
+            
             // Close mobile menu after selection
             const navMenu = document.querySelector('.nav-menu');
             if (navMenu.classList.contains('active')) {

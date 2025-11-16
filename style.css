@@ -5,10 +5,56 @@
     src: url('font.ttf');
 }
 
+/* Accent colors for different biomes */
+:root {
+    --accent-color: #5a6170; /* Default neutral */
+}
+
+body[data-active-section="home"] {
+    --accent-color: #7fa9c9; /* Soft blue */
+    background-color: #2d3338;
+}
+
+body[data-active-section="forest"] {
+    --accent-color: #6b9d6e; /* Forest green */
+    background-color: #2a332c;
+}
+
+body[data-active-section="desert"] {
+    --accent-color: #d4a574; /* Sandy orange */
+    background-color: #38312a;
+}
+
+body[data-active-section="ocean"] {
+    --accent-color: #5b9fc7; /* Ocean blue */
+    background-color: #2a3139;
+}
+
+body[data-active-section="arctic"] {
+    --accent-color: #8fc5d9; /* Ice blue */
+    background-color: #2d3538;
+}
+
+body[data-active-section="grassland"] {
+    --accent-color: #a8b46a; /* Grass yellow-green */
+    background-color: #32342a;
+}
+
+body[data-active-section="Adaptations"] {
+    --accent-color: #9b87b5; /* Purple */
+    background-color: #322f38;
+}
+
+body[data-active-section="bibliography"] {
+    --accent-color: #a88d6e; /* Book brown */
+    background-color: #33302c;
+}
+
 body {
-    background-color: #0d3b2e;
-    color: #e8f5e9;
+    background-color: #2a2d33;
+    color: #e8eaed;
     font-family: 'Font';
+    transition: background-color 0.5s ease;
 }
 
 .subtitle_text {
@@ -17,7 +63,7 @@ body {
     font-family: 'Font';
     display: block;
     margin: 10px auto 5px auto;
-    color: #a5d6a7;
+    color: #a8adb5;
     font-style: italic;
 }
 
@@ -31,10 +77,11 @@ body {
 
 
 hr {
-    border-color: #66bb6a;
+    border-color: var(--accent-color);
     border-width: 5px;
     border-style: solid;
     height: 0;
+    transition: border-color 0.3s ease;
 }
 
 body > *:not(hr, .header_text) {
@@ -68,7 +115,7 @@ section {
 }
 
 .nav-link {
-    color: #e8f5e9;
+    color: #e8eaed;
     text-decoration: none;
     font-size: 1.2em;
     padding: 10px 15px;
@@ -78,7 +125,7 @@ section {
 }
 
 .nav-link:hover {
-    background-color: #1b5e3f;
+    background-color: #404450;
 }
 
 /* Dropdown styles */
@@ -96,8 +143,8 @@ section {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1b5e3f;
-    border: 2px solid #66bb6a;
+    background-color: #404450;
+    border: 2px solid #5a6170;
     border-radius: 5px;
     list-style: none;
     padding: 10px 0;
@@ -119,7 +166,7 @@ section {
 }
 
 .dropdown-link {
-    color: #e8f5e9;
+    color: #e8eaed;
     text-decoration: none;
     padding: 8px 20px;
     display: block;
@@ -128,24 +175,61 @@ section {
 }
 
 .dropdown-link:hover {
-    background-color: #2e7d52;
+    background-color: #4f5565;
 }
 
 /* Section Styling */
 section {
     margin: 40px 10%;
     padding: 20px;
-    background-color: #104430;
+    background-color: #353841;
     border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+
+body[data-active-section="home"] section {
+    background-color: #373e45;
+}
+
+body[data-active-section="forest"] section {
+    background-color: #354038;
+}
+
+body[data-active-section="desert"] section {
+    background-color: #3f3a35;
+}
+
+body[data-active-section="ocean"] section {
+    background-color: #353d45;
+}
+
+body[data-active-section="arctic"] section {
+    background-color: #384145;
+}
+
+body[data-active-section="grassland"] section {
+    background-color: #3a3e35;
+}
+
+body[data-active-section="Adaptations"] section {
+    background-color: #3b3841;
+}
+
+body[data-active-section="bibliography"] section {
+    background-color: #3d3935;
 }
 
 section h1, section h2 {
-    color: #81c784;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+    filter: brightness(1.15);
 }
 
 section h3 {
-    color: #a5d6a7;
+    color: var(--accent-color);
+    opacity: 0.85;
     margin-top: 20px;
+    transition: color 0.3s ease;
 }
 
 section ul {
@@ -163,11 +247,44 @@ section ul li {
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
-    background-color: #1b5e3f;
-    border: 3px solid #66bb6a;
+    background-color: #404450;
+    border: 3px solid var(--accent-color);
     border-radius: 10px;
-    color: #a5d6a7;
+    color: #a8adb5;
     font-style: italic;
+    transition: border-color 0.3s ease, background-color 0.5s ease;
+}
+
+body[data-active-section="home"] .section-image {
+    background-color: #404955;
+}
+
+body[data-active-section="forest"] .section-image {
+    background-color: #414d48;
+}
+
+body[data-active-section="desert"] .section-image {
+    background-color: #4a4640;
+}
+
+body[data-active-section="ocean"] .section-image {
+    background-color: #404955;
+}
+
+body[data-active-section="arctic"] .section-image {
+    background-color: #434e52;
+}
+
+body[data-active-section="grassland"] .section-image {
+    background-color: #474d40;
+}
+
+body[data-active-section="Adaptations"] .section-image {
+    background-color: #484650;
+}
+
+body[data-active-section="bibliography"] .section-image {
+    background-color: #4a4740;
 }
 
 .section-image > figure {
@@ -196,11 +313,44 @@ section ul li {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #1b5e3f;
-    border: 3px solid #66bb6a;
+    background-color: #404450;
+    border: 3px solid var(--accent-color);
     border-radius: 10px;
-    color: #a5d6a7;
+    color: #a8adb5;
     font-style: italic;
+    transition: border-color 0.3s ease, background-color 0.5s ease;
+}
+
+body[data-active-section="home"] .section-image-half {
+    background-color: #404955;
+}
+
+body[data-active-section="forest"] .section-image-half {
+    background-color: #414d48;
+}
+
+body[data-active-section="desert"] .section-image-half {
+    background-color: #4a4640;
+}
+
+body[data-active-section="ocean"] .section-image-half {
+    background-color: #404955;
+}
+
+body[data-active-section="arctic"] .section-image-half {
+    background-color: #434e52;
+}
+
+body[data-active-section="grassland"] .section-image-half {
+    background-color: #474d40;
+}
+
+body[data-active-section="Adaptations"] .section-image-half {
+    background-color: #484650;
+}
+
+body[data-active-section="bibliography"] .section-image-half {
+    background-color: #4a4740;
 }
 
 .section-image-half > figure {
@@ -229,8 +379,8 @@ section ul li {
     right: 8px;
     bottom: 8px;
     font-size: 0.85em; /* smaller than body text */
-    color: #e0f2e9;
-    background: rgba(13,59,46,0.6);
+    color: #e8eaed;
+    background: rgba(42,45,51,0.6);
     padding: 4px 6px;
     border-radius: 4px;
 }
@@ -238,7 +388,7 @@ section ul li {
 .img-credit {
     display: block;
     font-size: 0.7em;
-    color: #a5d6a7;
+    color: #a8adb5;
     margin-top: 8px;
     text-align: center;
 }
@@ -254,7 +404,7 @@ html {
     flex-direction: column;
     cursor: pointer;
     padding: 10px;
-    background-color: #1b5e3f;
+    background-color: #404450;
     border-radius: 5px;
     margin: 0 auto;
     width: 40px;
@@ -263,7 +413,7 @@ html {
 .hamburger span {
     width: 30px;
     height: 3px;
-    background-color: #e8f5e9;
+    background-color: #e8eaed;
     margin: 4px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -321,7 +471,7 @@ html {
         overflow: hidden;
         transition: max-height 0.3s ease;
         border: none;
-        background-color: #0d3b2e;
+        background-color: #2a2d33;
     }
     
     .dropdown.active .dropdown-menu {
@@ -372,11 +522,13 @@ html {
 }
 
 a {
-    color: rgb(125, 254, 147);
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+    filter: brightness(1.15);
 }
 
 a:hover {
-    color: rgb(89, 193, 106)
+    filter: brightness(1.35);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -402,8 +554,8 @@ h3 {
 }
 
 .modal-content {
-    background-color: #1b5e3f;
-    border: 3px solid #66bb6a;
+    background-color: #404450;
+    border: 3px solid #5a6170;
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
@@ -412,20 +564,20 @@ h3 {
 }
 
 .modal-content h2 {
-    color: #81c784;
+    color: #9da3af;
     margin-top: 0;
     font-family: 'Momo Trust Display', sans-serif;
 }
 
 .modal-content p {
-    color: #e8f5e9;
+    color: #e8eaed;
     line-height: 1.6;
     margin: 20px 0;
 }
 
 .modal-button {
-    background-color: #66bb6a;
-    color: #0d3b2e;
+    background-color: #5a6170;
+    color: #e8eaed;
     border: none;
     padding: 12px 30px;
     font-size: 1em;
@@ -436,7 +588,7 @@ h3 {
 }
 
 .modal-button:hover {
-    background-color: #81c784;
+    background-color: #6b7180;
 }
 
 /* Adaptations page specific image styling */
