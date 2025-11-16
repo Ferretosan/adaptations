@@ -1,4 +1,21 @@
 [[redirects]]
   from = "/*"
-  to = "/404.html"
-  status = 404
+  to = "/index.html"
+  status = 200
+
+# Caching for static assets
+[[headers]]
+  for = "/image/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.ttf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"

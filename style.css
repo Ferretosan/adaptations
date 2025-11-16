@@ -3,6 +3,7 @@
 @font-face {
     font-family: 'Font';
     src: url('font.ttf');
+    font-display: swap;
 }
 
 /* Accent colors for different biomes */
@@ -408,6 +409,7 @@ html {
     border-radius: 5px;
     margin: 0 auto;
     width: 40px;
+    border: none;
 }
 
 .hamburger span {
@@ -537,6 +539,28 @@ h1, h2, h3, h4, h5, h6 {
 
 h3 {
     font-size: 150%;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    background: #20232a;
+    color: #e8eaed;
+    padding: 8px 12px;
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+    z-index: 10000;
 }
 
 /* Mobile Warning Modal */

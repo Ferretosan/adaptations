@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adaptations.school.ferretosan.com/sitemap.xml

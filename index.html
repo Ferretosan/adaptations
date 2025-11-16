@@ -3,12 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A student project exploring animal adaptations across biomes (forest, desert, ocean, tundra, grassland) with clear examples of structural, behavioral, and physiological adaptations.">
+    <meta name="theme-color" content="#5a6170">
     <title>Animal Adaptations - Ferret's School Work</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="/font.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
     <link rel="icon" href="image/favicon.png" type="image/png">
+    <link rel="canonical" href="https://adaptations.school.ferretosan.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Animal Adaptations - Ferret's School Work">
+    <meta property="og:description" content="Explore how animals adapt to forest, desert, ocean, tundra and grassland biomes with accessible, student-friendly explanations and images.">
+    <meta property="og:url" content="https://adaptations.school.ferretosan.com/">
+    <meta property="og:image" content="https://adaptations.school.ferretosan.com/image/giraffe_1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Animal Adaptations - Ferret's School Work">
+    <meta name="twitter:description" content="Student project on animal adaptations across major biomes.">
+    <meta name="twitter:image" content="https://adaptations.school.ferretosan.com/image/giraffe_1.jpg">
+
+        <!-- Highwire/Scholar citation meta for tools like MyBib -->
+        <meta name="citation_title" content="Animal Adaptations">
+        <meta name="citation_author" content="Elijah Lee">
+        <meta name="citation_publication_date" content="2025">
+        <meta name="citation_fulltext_html_url" content="https://adaptations.school.ferretosan.com/">
+
+        <!-- Dublin Core basic metadata -->
+        <meta name="DC.Title" content="Animal Adaptations">
+        <meta name="DC.Creator" content="Elijah Lee">
+        <meta name="DC.Date" content="2025-11-16">
+        <meta name="DC.Language" content="en">
+        <meta name="DC.Type" content="Text">
+        <meta name="DC.Identifier" content="https://adaptations.school.ferretosan.com/">
+
+        <!-- Schema.org Article structured data for better citations -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Animal Adaptations",
+            "name": "Animal Adaptations",
+            "author": { "@type": "Person", "name": "Elijah Lee" },
+            "datePublished": "2025-11-16",
+            "dateModified": "2025-11-16",
+            "inLanguage": "en",
+            "url": "https://adaptations.school.ferretosan.com/",
+            "image": "https://adaptations.school.ferretosan.com/image/giraffe_1.jpg",
+            "description": "A student project exploring animal adaptations across biomes (forest, desert, ocean, tundra, grassland) with examples of structural, behavioral, and physiological adaptations."
+        }
+        </script>
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -27,22 +71,28 @@
             document.body.setAttribute('data-active-section', sectionId);
             
             // Close mobile menu after selection
-            const navMenu = document.querySelector('.nav-menu');
+            const navMenu = document.getElementById('primary-navigation');
+            const hamburger = document.getElementById('hamburgerButton');
             if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
+                if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
             }
         }
         
         function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
+            const navMenu = document.getElementById('primary-navigation');
+            const btn = document.getElementById('hamburgerButton');
+            const isOpen = navMenu.classList.toggle('active');
+            if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         }
         
         function toggleDropdown(event) {
             if (window.innerWidth <= 768) {
                 event.preventDefault();
                 const dropdown = event.target.closest('.dropdown');
-                dropdown.classList.toggle('active');
+                const isNowActive = dropdown.classList.toggle('active');
+                const toggleEl = dropdown.querySelector('.dropdown-toggle');
+                if (toggleEl) toggleEl.setAttribute('aria-expanded', isNowActive ? 'true' : 'false');
             }
         }
         
@@ -64,10 +114,40 @@
                     modal.style.display = 'flex';
                 }
             }
+            // Accessibility: keyboard support for hamburger and dropdowns
+            const hamburger = document.getElementById('hamburgerButton');
+            if (hamburger) {
+                hamburger.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleMenu();
+                    } else if (e.key === 'Escape') {
+                        const navMenu = document.getElementById('primary-navigation');
+                        if (navMenu && navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            }
+            document.querySelectorAll('.dropdown-toggle').forEach((el) => {
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        toggleDropdown(e);
+                    } else if (e.key === 'Escape') {
+                        const dropdown = e.target.closest('.dropdown');
+                        if (dropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                            e.target.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            });
         });
     </script>
 </head>
 <body>
+    <a href="#home" class="skip-link">Skip to main content</a>
     <!-- Mobile Warning Modal -->
     <div id="mobileModal" class="mobile-modal">
         <div class="modal-content">
@@ -80,18 +160,18 @@
     <span class="subtitle_text">Ferret's School Work</span>
     <span class="header_text"><b>Animal Adaptations</b></span>
     <hr>
-    <nav class="navbar">
-        <div class="hamburger" onclick="toggleMenu()">
+    <nav class="navbar" role="navigation" aria-label="Primary">
+        <button id="hamburgerButton" class="hamburger" onclick="toggleMenu()" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
-        </div>
-        <ul class="nav-menu">
-            <li class="nav-item">
+        </button>
+        <ul id="primary-navigation" class="nav-menu" role="menubar">
+            <li class="nav-item" role="none">
                 <a href="javascript:void(0)" onclick="showSection('home')" class="nav-link">Home</a>
             </li>
-            <li class="nav-item dropdown">
-                <a href="javascript:void(0)" onclick="toggleDropdown(event)" class="nav-link dropdown-toggle">Biomes</a>
+            <li class="nav-item dropdown" role="none">
+                <a href="javascript:void(0)" onclick="toggleDropdown(event)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Biomes</a>
                 <ul class="dropdown-menu">
                     <li><a href="javascript:void(0)" onclick="showSection('forest')" class="dropdown-link">Forest</a></li>
                     <li><a href="javascript:void(0)" onclick="showSection('desert')" class="dropdown-link">Desert</a></li>
@@ -101,10 +181,10 @@
                     <!-- Rainforest removed from nav (content merged into Forest section) -->
                 </ul>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" role="none">
                 <a href="javascript:void(0)" onclick="showSection('Adaptations')" class="nav-link">Adaptations</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" role="none">
                 <a href="javascript:void(0)" onclick="showSection('bibliography')" class="nav-link">Bibliography</a>
             </li>
         </ul>
