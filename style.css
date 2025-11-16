@@ -438,3 +438,13 @@ h3 {
 .modal-button:hover {
     background-color: #81c784;
 }
+
+/* Adaptations page specific image styling */
+#Adaptations .section-image figure {
+    height: auto;
+}
+
+#Adaptations .section-image img {
+    object-fit: contain;
+    height: auto;
+}
