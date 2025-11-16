@@ -338,7 +338,7 @@ html {
         display: inline-block;
     }
     
-    .section-image {
+    .section-image figure {
         height: 250px;
     }
     
@@ -362,7 +362,7 @@ html {
         font-size: 200%;
     }
     
-    .section-image {
+    .section-image figure {
         height: 200px;
     }
     
