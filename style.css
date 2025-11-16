@@ -31,7 +31,7 @@ body[data-active-section="ocean"] {
     background-color: #2a3139;
 }
 
-body[data-active-section="arctic"] {
+body[data-active-section="tundra"] {
     --accent-color: #8fc5d9; /* Ice blue */
     background-color: #2d3538;
 }
@@ -204,7 +204,7 @@ body[data-active-section="ocean"] section {
     background-color: #353d45;
 }
 
-body[data-active-section="arctic"] section {
+body[data-active-section="tundra"] section {
     background-color: #384145;
 }
 
@@ -272,7 +272,7 @@ body[data-active-section="ocean"] .section-image {
     background-color: #404955;
 }
 
-body[data-active-section="arctic"] .section-image {
+body[data-active-section="tundra"] .section-image {
     background-color: #434e52;
 }
 
@@ -338,7 +338,7 @@ body[data-active-section="ocean"] .section-image-half {
     background-color: #404955;
 }
 
-body[data-active-section="arctic"] .section-image-half {
+body[data-active-section="tundra"] .section-image-half {
     background-color: #434e52;
 }
 
