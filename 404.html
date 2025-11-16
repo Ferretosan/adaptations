@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Animal Adaptations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+    <link rel="icon" href="image/favicon.png" type="image/png">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-family: 'Momo Trust Display', sans-serif;
+            color: var(--accent-color, #7fa9c9);
+            margin: 0;
+            line-height: 1;
+            filter: brightness(1.2);
+        }
+        
+        .error-message {
+            font-size: 32px;
+            color: #e8eaed;
+            margin: 20px 0;
+            font-family: 'Momo Trust Display', sans-serif;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            color: #a8adb5;
+            margin: 20px 0 40px 0;
+            max-width: 600px;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .error-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: 'Font';
+            background-color: var(--accent-color, #7fa9c9);
+            color: #2a2d33;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: filter 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        
+        .error-button:hover {
+            filter: brightness(1.2);
+            transform: translateY(-2px);
+        }
+        
+        .error-button.secondary {
+            background-color: #404450;
+            color: #e8eaed;
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .error-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 12px;
+            opacity: 0.9;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-message {
+                font-size: 24px;
+            }
+            
+            .error-description {
+                font-size: 16px;
+            }
+            
+            .error-image {
+                max-width: 300px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+    <script>
+        // Set a random accent color for variety
+        const colors = ['#7fa9c9', '#6b9d6e', '#d4a574', '#5b9fc7', '#8fc5d9', '#a8b46a', '#9b87b5', '#a88d6e'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.documentElement.style.setProperty('--accent-color', randomColor);
+    </script>
+</head>
+<body data-active-section="404">
+    <span class="subtitle_text">Ferret's School Work</span>
+    <span class="header_text"><b>Animal Adaptations</b></span>
+    <hr>
+    
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">aaaaaaaaaaaaaaaaaa</h2>
+        <img src="image/404.png" class="error-image" alt="404 Error">
+        <div class="error-actions">
+            <a href="index.html" class="error-button">Return to Home</a>
+            <button onclick="history.back()" class="error-button secondary">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
