@@ -16,6 +16,11 @@ body[data-active-section="home"] {
     background-color: #2d3338;
 }
 
+body[data-active-section="natural-selection"] {
+    --accent-color: #c97a7a; /* Darwin red */
+    background-color: #382a2a;
+}
+
 body[data-active-section="forest"] {
     --accent-color: #6b9d6e; /* Forest green */
     background-color: #2a332c;
@@ -192,6 +197,10 @@ body[data-active-section="home"] section {
     background-color: #373e45;
 }
 
+body[data-active-section="natural-selection"] section {
+    background-color: #403535;
+}
+
 body[data-active-section="forest"] section {
     background-color: #354038;
 }
@@ -260,6 +269,10 @@ body[data-active-section="home"] .section-image {
     background-color: #404955;
 }
 
+body[data-active-section="natural-selection"] .section-image {
+    background-color: #4d4040;
+}
+
 body[data-active-section="forest"] .section-image {
     background-color: #414d48;
 }
@@ -324,6 +337,10 @@ body[data-active-section="bibliography"] .section-image {
 
 body[data-active-section="home"] .section-image-half {
     background-color: #404955;
+}
+
+body[data-active-section="natural-selection"] .section-image-half {
+    background-color: #4d4040;
 }
 
 body[data-active-section="forest"] .section-image-half {
